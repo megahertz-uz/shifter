@@ -1,0 +1,10 @@
+name: 'Shifter'
+description: 'Github Action to replace strings in files or directories'
+inputs:
+  patterns:  
+    description: 'Patterns'
+    required: true
+    default: ""
+runs:
+  using: 'node20'
+  main: 'index.js'
