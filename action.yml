@@ -2,7 +2,7 @@ name: 'Shifter Action'
 description: 'Github Action to replace strings in files or directories'
 inputs:
   patterns:  
-    description: 'Patterns'
+    description: 'Patterns to replace'
     required: true
     default: ""
 runs:
