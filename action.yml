@@ -1,4 +1,4 @@
-name: 'Shifter'
+name: 'Shifter Action'
 description: 'Github Action to replace strings in files or directories'
 inputs:
   patterns:  
