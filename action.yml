@@ -1,5 +1,8 @@
 name: 'Shifter Action'
 description: 'Github Action to replace strings in files or directories'
+branding:
+  icon: aperture
+  color: blue
 inputs:
   patterns:  
     description: 'Patterns to replace'
