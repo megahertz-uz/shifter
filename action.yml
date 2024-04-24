@@ -11,7 +11,7 @@ inputs:
   delimiter:  
     description: 'Delimiter'
     required: true
-    default: "\n"
+    default: ""
   equal_sign:  
     description: 'Equal Sign'
     required: true

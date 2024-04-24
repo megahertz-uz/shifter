@@ -2,10 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 try {
-  const delimiter = core.getInput('delimiter')
-  if (delimiter !== "\n") {
-    delimiter.concat("\n")
-  }
+  const delimiter = core.getInput('delimiter').concat("\n")
   const equal_sign = core.getInput('equal_sign')
   const patterns = core.getInput('patterns').split(delimiter);
   const patterns_dict = {};
