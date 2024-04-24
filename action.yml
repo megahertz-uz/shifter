@@ -10,12 +10,16 @@ inputs:
     default: ""
   delimiter:  
     description: 'Delimiter'
-    required: true
+    required: false
     default: ""
   equal_sign:  
     description: 'Equal Sign'
-    required: true
+    required: false
     default: "="
+  locations:  
+    description: 'locations to replace'
+    required: true
+    default: ""
 runs:
   using: 'node20'
   main: 'index.js'
