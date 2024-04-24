@@ -18,13 +18,13 @@ try {
   console.log("Locations: ", locations);
 
   function replaceTextInFile(filePath, pattern, value) {
-    fs.readFile(filePath, 'utf8', (err, data) => {
+    fs.readFileSync(filePath, 'utf8', (err, data) => {
     if (err) {
         console.error(`Error reading file: ${err}`);
         return;
     }
     const updatedData = data.replace(new RegExp(pattern, 'g'), value);
-    fs.writeFile(filePath, updatedData, 'utf8', (err) => {
+    fs.writeFileSync(filePath, updatedData, 'utf8', (err) => {
         if (err) {
             console.error(`Error writing to file: ${err}`);
             return;
