@@ -6,8 +6,8 @@ try {
   const delimiter = core.getInput('delimiter').concat("\n")
   const equal_sign = core.getInput('equal_sign')
   const patterns = core.getInput('patterns').split(delimiter);
-  const locations = core.getInput('locations').split("\n");
-  const patterns_dict = {};
+  var locations = core.getInput('locations').split("\n");
+  var patterns_dict = {};
 
   patterns.forEach(item => {
     const [key, value] = item.split(equal_sign);
@@ -18,20 +18,11 @@ try {
   console.log("Locations: ", locations);
 
   function replaceTextInFile(filePath, pattern, value) {
-    fs.readFileSync(filePath, 'utf8', (err, data) => {
-    if (err) {
-        console.error(`Error reading file: ${err}`);
-        return;
-    }
+    const data = fs.readFileSync(filePath,
+    { encoding: 'utf8', flag: 'r' });
     const updatedData = data.replace(new RegExp(pattern, 'g'), value);
-    fs.writeFileSync(filePath, updatedData, 'utf8', (err) => {
-        if (err) {
-            console.error(`Error writing to file: ${err}`);
-            return;
-        }
-        console.log(`'${pattern}' replaced to '${value}' successfully in ${filePath}`);
-    });
-    });
+    fs.writeFileSync(filePath, updatedData);
+    console.log(`'${pattern}' replaced to '${value}' successfully in ${filePath}`);
   }
 
   locations.forEach((location) =>{
