@@ -29,7 +29,7 @@ try {
             console.error(`Error writing to file: ${err}`);
             return;
         }
-        console.log(`Text replaced successfully in ${filePath}`);
+        console.log(`'${pattern}' replaced to '${value}' successfully in ${filePath}`);
     });
     });
   }
