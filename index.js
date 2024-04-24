@@ -2,11 +2,18 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 try {
-  const patterns = core.getInput('patterns').split('\n');
-  console.log(patterns);
-  // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload: ${payload}`);
+  const delimiter = core.getInput('delimiter')
+  if (delimiter !== "\n") {
+    delimiter.concat("\n")
+  }
+  const equal_sign = core.getInput('equal_sign')
+  const patterns = core.getInput('patterns').split(delimiter);
+  const patterns_dict = {};
+  patterns.forEach(item => {
+    const [key, value] = item.split(equal_sign);
+    patterns_dict[key] = value;
+  })
+  console.log(patterns_dict);
 } catch (error) {
   core.setFailed(error.message);
 }
