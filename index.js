@@ -14,6 +14,7 @@ try {
     patterns_dict[key] = value;
   })
   console.log(patterns_dict);
+  console.log(delimiter, equal_sign, patterns);
 } catch (error) {
   core.setFailed(error.message);
 }
