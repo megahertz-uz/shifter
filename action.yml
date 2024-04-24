@@ -8,6 +8,14 @@ inputs:
     description: 'Patterns to replace'
     required: true
     default: ""
+  delimiter:  
+    description: 'Delimiter'
+    required: true
+    default: "\n"
+  equal_sign:  
+    description: 'Equal Sign'
+    required: true
+    default: "="
 runs:
   using: 'node20'
   main: 'index.js'
