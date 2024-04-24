@@ -35,7 +35,7 @@ try {
   }
 
   locations.forEach((location) =>{
-    for (const [key, value] of Object.entries(patterns)) {
+    for (const [key, value] of Object.entries(patterns_dict)) {
         replaceTextInFile(location, key, value)
     }
   })
